@@ -21,4 +21,15 @@ class Note {
         self.lastUpdate = lastUpdate
         self.subnotes = subnotes
     }
+    
+    var dateString: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        return formatter.string(from: lastUpdate)
+    }
+    
+    func updateDate() {
+        lastUpdate = Date()
+    }
 }
